@@ -43,7 +43,7 @@ def scrapDaily(soup):
   curvedata['date'] = datepro
   curvedata['confirmed'] = cofirmedlistpro
   curvedata['cured'] = curedlistpro
-  with open('daily.json', 'w') as f:#save data
+  with open('../covid19map/src/assets/daily.json', 'w') as f:#save data
     json.dump(curvedata,f)
 
 #today statistik
@@ -62,8 +62,8 @@ def scrapToday(soup):
   for s in stateInfo:
     state = {}
     state['name'] = s.find('h4').get_text()
-    state['death'] = s.find_all('h5')[0].get_text()
-    state['confirm'] = s.find_all('h5')[1].get_text()  
+    state['death'] = int(s.find_all('h5')[0].get_text().replace(".",""))
+    state['confirm'] = int(s.find_all('h5')[1].get_text().replace(".",""))
     trs = s.find('table').tbody.find_all('tr')
     cities =  []  
     for tr in trs: 
@@ -77,7 +77,7 @@ def scrapToday(soup):
     state['city'] = cities
     states.append(state)
   res['children'] = states   
-  with open('today.json','w',encoding="utf-8") as f:
+  with open('../covid19map/src/assets/today.json','w',encoding="utf-8") as f:
     json.dump(res,f,ensure_ascii=False)
   
 if __name__=="__main__":

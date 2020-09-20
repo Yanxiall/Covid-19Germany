@@ -51,11 +51,11 @@ def scrapToday(soup):
   TotalResult = soup.find_all('h1',{"class":"card-number-big"})#Total cases in Germany
   res = {}
   total = {} 
-  total['confirmed'] = TotalResult[0].get_text()#Total confirmed cases in Germany
-  total['cured'] = TotalResult[1].get_text()#Total number of cures in Germany 
-  total['death'] = TotalResult[2].get_text()#Total deaths in Germany
-  total['newconfirm'] = soup.find('span',{"class":"lightred"}).get_text()#new confirmed cases today in Germany
-  total['newdeath'] = soup.find('span', {"class":"card-number-small"}).get_text()#new deaths today in Germany
+  total['confirmed'] = TotalResult[0].get_text().replace(".",",")#Total confirmed cases in Germany
+  total['cured'] = TotalResult[1].get_text().replace(".",",")#Total number of cures in Germany 
+  total['death'] = TotalResult[2].get_text().replace(".",",")#Total deaths in Germany
+  total['newconfirm'] = soup.find('span',{"class":"lightred"}).get_text().replace(".",",")#new confirmed cases today in Germany
+  total['newdeath'] = soup.find('span', {"class":"card-number-small"}).get_text().replace(".",",")#new deaths today in Germany
   res['germantotal'] = total  
   stateInfo = soup.find_all('div',{"class":"col-xs-12 col-lg-6 col-xl-4 d-flex flex-column"})
   states = []
@@ -69,10 +69,10 @@ def scrapToday(soup):
     for tr in trs: 
       city = {}
       city['name'] = tr.find_all('td')[0].get_text()
-      city['death'] = tr.find_all('td')[2].get_text()
-      city['confirm'] = tr.find_all('td')[3].get_text()
-      curedhtml = tr.find_all('td')[4].get_text()
-      city['cured'] = re.search(r"^\d+(.\d+)*",curedhtml).group()
+      city['death'] = tr.find_all('td')[2].get_text().replace(".","")
+      city['confirm'] = tr.find_all('td')[3].get_text().replace(".","")
+      #curedhtml = tr.find_all('td')[4].get_text()
+      #city['cured'] = re.search(r"^\d+(.\d+)*",curedhtml).group()
       cities.append(city)
     state['city'] = cities
     states.append(state)

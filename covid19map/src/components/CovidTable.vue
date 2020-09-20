@@ -4,14 +4,13 @@
         :data="tableData"
         style="width: 100%;margin-bottom: 20px;"
         row-key="name"
-        border
-        default-expand-all
+        border      
         :tree-props="{children: 'city', hasChildren: 'hasChildren'}">
         <el-table-column
           prop="name"
           label="state"
           sortable
-          width="180">
+          width="300">
         </el-table-column>
         <el-table-column
           prop="confirm"
@@ -21,7 +20,9 @@
         </el-table-column>
         <el-table-column
           prop="death"
-          label="death">
+          label="death"
+          sortable
+          >
         </el-table-column>
       </el-table>
     </div>

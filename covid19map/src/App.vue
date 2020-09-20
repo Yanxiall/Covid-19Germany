@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <test/>
+    <CovidTable/>
     <Germanymap/>
     <dailyConfirm/>
     <h2 class="title">
@@ -38,13 +38,13 @@
 import Germanymap from './components/GermanyMap'
 import dailyConfirm from './components/dailyConfirm'
 import todaydata from './assets/today.json'
-import test from './components/test'
+import CovidTable from './components/CovidTable'
 export default {
   name: 'App',
   components: {
    Germanymap,
    dailyConfirm,
-   test
+   CovidTable
   },
   data(){
      return {

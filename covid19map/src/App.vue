@@ -1,35 +1,44 @@
 <template>
   <div class="main">
-    <CovidTable/>
-    <Germanymap/>
-    <dailyConfirm/>
-    <h2 class="title">
-        statistics
-      </h2>
+      <div class="banner">   
+        <img :src="imgSrc" width="100%" height="100%" alt="" />
+      </div>
+      <div class="totalInfo">
+        <h2>Overview in Germany</h2>
+      </div>
       <div class="statistics">
         <div>
-          <div class="number">{{total.confirmed}}</div>
-          <div class="desc">Confirmed </div>
+          <div class="confirmNum">{{total.confirmed}}</div>
+          <div class="desc">Total Cases</div>
         </div>
         <div>
-          <div class="number">{{total.cured}}</div>
-          <div class="desc">Cured</div>
+          <div class="recoverNum">{{total.cured}}</div>
+          <div class="desc">Total Recovered</div>
         </div>
         <div>
-          <div class="number">{{total.death}}</div>
-          <div class="desc">Death</div>
+          <div class="deathNum">{{total.death}}</div>
+          <div class="desc">Total Deaths</div>
         </div>
         <div>
-          <div class="number">{{total.newdeath}}</div>
-          <div class="desc">New Death</div>
+          <div class="newdeathNum">{{total.newdeath}}</div>
+          <div class="desc">New Deaths</div>
         </div>
          <div>
-          <div class="number">{{total.newconfirm}}</div>
-          <div class="desc">New Confirmed</div>
+          <div class="newconfirmNum">{{total.newconfirm}}</div>
+          <div class="desc">New Cases</div>
         </div>
       </div>
-      <div class="statinfo">
-
+      <div class="subtitle">
+         <h2>Case Numbers Map</h2>
+         <Germanymap/>
+      </div>
+      <div class="subtitle">
+         <h2>Daily Total Cases</h2>
+         <dailyConfirm/>
+      </div>
+      <div class="subtitle">
+        <h2>Case Numbers by State</h2>
+        <CovidTable/>
       </div>    
   </div>
 </template>
@@ -48,6 +57,7 @@ export default {
   },
   data(){
      return {
+       imgSrc:require('./assets/corona_banner.jpg'),
        total:''
      }
   },
@@ -58,35 +68,23 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin:0;
+  padding:0;
 }
 .main {
+  font-family: "Times New Roman", Times, serif;
   width: 80%;
-  margin: 10px auto;
+  margin: 0px auto 10px auto;
 }
-
-.main .title {
-  text-decoration: #22aeb4;
+.main .banner{
+  font-size:0;
 }
-.main .title ::before {
-  content: '';
-  width: 20px;
-  height: 100%;
-  background-color: #22aeb4;
+.main .totalInfo{
+  padding:20px 0px 20px 0px; 
+  background-color:turquoise;
+  padding-left:10px;
 }
-
-.main .title .updateTime {
-  font-size: 14px;
-  font-weight: 500;
-  float: right;
-}
-
 .main .statistics {
   display: flex;
   justify-content: space-between;
@@ -95,10 +93,38 @@ export default {
   padding: 20px 40px;
   border-radius: 10px;
 }
-
-.main .number {
+.main .subtitle h2{
+  padding-top:20px;
+  padding-bottom: 20px;
+  padding-left:10px;
+  background-color:turquoise;
+}
+.main .confirmNum {
   color: #22aeb4;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 1000;
+}
+.main .recoverNum {
+  color:green;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.main .deathNum {
+  color:red;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.main .newdeathNum {
+  color:red;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.main .newconfirmNum {
+  color:orchid;
+  font-size: 20px;
+  font-weight: 1000;
+}
+.main .desc{
+  font-weight: 700;
 }
 </style>

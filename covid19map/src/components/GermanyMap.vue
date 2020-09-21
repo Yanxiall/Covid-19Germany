@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mapdata">
     <highcharts :constructorType="'mapChart'" class="hc" :options="chartOptions" ref="chart"></highcharts>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
           map: GermMap
         },
         title: {
-          text: 'German covid-19 map'
+          text: 'Covid-19 Map with Case Numbers'
         },
         mapNavigation: {
           enabled: true,

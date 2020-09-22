@@ -40,7 +40,7 @@ def scrapDaily(soup):
   cofirmedlistpro = list(map(int, cofirmedlistpro))#convert string to int
   curedlistpro = list(map(int,curedlistpro))
   curvedata = {}
-  curvedata['date'] = datepro
+  #curvedata['date'] = datepro
   curvedata['confirmed'] = cofirmedlistpro
   curvedata['cured'] = curedlistpro
   with open('../covid19map/src/assets/daily.json', 'w') as f:#save data

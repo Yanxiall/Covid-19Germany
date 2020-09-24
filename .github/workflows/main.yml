@@ -31,10 +31,6 @@ jobs:
         git config --global user.name Yanxiall
         git add .
         git commit -m "update" -a
-        git remote set-url origin https://Yanxiall:${{secrets.GITHUB_TOKEN}}@github.com/Yanxiall/Covid-19Germany.git
-        git remote -v
-        git checkout -b gh-pages
-        git push origin HEAD:gh-pages --force
     - name: npm install, build
       run: |
         cd covid19map
@@ -44,5 +40,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_BRANCH: myPages
         PUBLISH_DIR: covid19map/dist

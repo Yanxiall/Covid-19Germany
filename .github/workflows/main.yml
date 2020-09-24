@@ -1,8 +1,9 @@
-name: Python application
+name: Scheduled crawler and deployment
 
 on:
+  push:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   build:

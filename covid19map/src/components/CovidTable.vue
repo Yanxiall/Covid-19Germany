@@ -1,8 +1,7 @@
     <template>
     <div>
       <el-table
-        :data="tableData"
-       
+        :data="tableData"       
         :cell-style="cellStyle"
         :header-cell-style="headCellStyle"
         row-key="name"

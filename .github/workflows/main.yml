@@ -31,6 +31,10 @@ jobs:
         git config --global user.name Yanxiall
         git add .
         git commit -m "update" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: npm install, build
       run: |
         cd covid19map
@@ -40,4 +44,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: covid19map/dist

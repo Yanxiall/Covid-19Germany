@@ -3,7 +3,7 @@ name: Scheduled crawler and deployment
 on:
   push:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 9,13,17,21,23 * * *'
 
 jobs:
   build:

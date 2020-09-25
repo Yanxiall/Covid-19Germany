@@ -48,12 +48,15 @@ def scrapDaily(soup):
 
 #today statistik
 def scrapToday(soup):  
-  TotalResult = soup.find_all('h1',{"class":"card-number-big"})#Total cases in Germany
+  TotalResult1 = soup.find_all('h1',{"class":"card-number-big"})#Total cases in Germany
+  TotalResult2 = soup.find_all('h3',{"class":"card-number-big"})#Total cases in Germany
+  TotalResult3 = soup.find_all('h5',{"class":"card-number-big"})#Total cases in Germany
   res = {}
   total = {} 
-  total['confirmed'] = TotalResult[0].get_text().replace(".",",")#Total confirmed cases in Germany
-  total['cured'] = TotalResult[1].get_text().replace(".",",")#Total number of cures in Germany 
-  total['death'] = TotalResult[2].get_text().replace(".",",")#Total deaths in Germany
+  total['confirmed'] = TotalResult1[0].get_text().replace(".",",")#Total confirmed cases in Germany
+  total['cured'] = TotalResult1[1].get_text().replace(".",",")#Total number of cures in Germany 
+  total['death'] = TotalResult2[0].get_text().replace(".",",")#Total deaths in Germany
+  total['activeCases'] = TotalResult3[0].get_text().replace(".",",")
   total['newconfirm'] = soup.find('span',{"class":"lightred"}).get_text().replace(".",",")#new confirmed cases today in Germany
   total['newdeath'] = soup.find('span', {"class":"card-number-small"}).get_text().replace(".",",")#new deaths today in Germany
   res['germantotal'] = total  

@@ -20,6 +20,10 @@
           <div class="desc">Total Deaths</div>
         </div>
         <div>
+          <div class="deathNum">{{total.activeCases}}</div>
+          <div class="desc">Active Cases</div>
+        </div>
+        <div>
           <div class="newdeathNum">{{total.newdeath}}</div>
           <div class="desc">New Deaths</div>
         </div>

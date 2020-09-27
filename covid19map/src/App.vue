@@ -91,11 +91,12 @@ export default {
   
 }
 .totalInfo h2{
-  font-size: 1.8vw;
+  font-size: 2vw;
 }
 .main .statistics {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content:space-between;
   text-align: center;
   background-color: #f5f6f7;
   padding: 2.667vw 5.333vw;
@@ -106,36 +107,36 @@ export default {
   padding-bottom: 2.667vw;
   padding-left:1.333vw;
   background-color:turquoise;
-  font-size: 1.8vw;
+  font-size: 2vw;
 }
 .main .activeCases{
   color:indigo;
-  font-size: 1.8vw;
+  font-size: 2vw;
   font-weight: 1000;
 }
 .main .confirmNum {
   color: #22aeb4;
-  font-size: 1.8vw;
+  font-size: 2vw;
   font-weight: 1000;
 }
 .main .recoverNum {
   color:green;
-  font-size: 1.8vw;
+  font-size: 2vw;
   font-weight: 1000;
 }
 .main .deathNum {
   color:red;
-  font-size: 1.8vw;
+  font-size: 2vw;
   font-weight: 1000;
 }
 .main .newdeathNum {
-  color:lawngreen;
-  font-size: 1.8vw;
+  color:crimson;
+  font-size: 2vw;
   font-weight: 1000;
 }
 .main .newconfirmNum {
   color:mediumblue;
-  font-size: 1.8vw;
+  font-size: 2vw;
   font-weight: 1000;
 }
 .main .desc{

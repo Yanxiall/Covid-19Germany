@@ -41,14 +41,14 @@
         methods:{
              cellStyle({ row, column, rowIndex, columnIndex }) {
                 if (columnIndex === 0 || 1 || 2) {
-                return 'font-weight: bold; font-family: "Times New Roman", Times, serif; font-size:1.5vw;';
+                return 'font-family: "Times New Roman", Times, serif;';
                 } else {
                  return ''
                 }
               },
               headCellStyle({ row, column, rowIndex, columnIndex }) {
                 if (rowIndex === 0) {
-                   return 'font-weight: bold; font-size:1.8vw;font-family: "Times New Roman", Times, serif;';
+                   return 'font-family: "Times New Roman", Times, serif;';
                 }
                 else {
                    return ''

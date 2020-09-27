@@ -4,6 +4,7 @@
         :data="tableData"       
         :cell-style="cellStyle"
         :header-cell-style="headCellStyle"
+        width="100%"
         row-key="name"
         border      
         :tree-props="{children: 'city', hasChildren: 'hasChildren'}">
@@ -11,18 +12,19 @@
           prop="name"
           label="States"
           sortable
-          width="400">
+         >
         </el-table-column>
         <el-table-column
           prop="confirm"
           label="Total Cases"
           sortable
-          width="350">
+         >
         </el-table-column>
         <el-table-column
           prop="death"
           label="Total Deaths"
           sortable
+           
           >
         </el-table-column>
       </el-table>
@@ -39,14 +41,14 @@
         methods:{
              cellStyle({ row, column, rowIndex, columnIndex }) {
                 if (columnIndex === 0 || 1 || 2) {
-                return 'padding-left:100px; font-family: "Times New Roman", Times, serif;';
+                return 'font-weight: bold; font-family: "Times New Roman", Times, serif; font-size:1.5vw;';
                 } else {
                  return ''
                 }
               },
               headCellStyle({ row, column, rowIndex, columnIndex }) {
                 if (rowIndex === 0) {
-                   return 'padding-left:100px;font-size:20px; font-family: "Times New Roman", Times, serif;';
+                   return 'font-weight: bold; font-size:1.8vw;font-family: "Times New Roman", Times, serif;';
                 }
                 else {
                    return ''

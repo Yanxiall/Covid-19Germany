@@ -24,10 +24,14 @@ export default {
     return {
       chartOptions: {
         chart: {
-          map: GermMap
+          map: GermMap,
         },
         title: {
-          text: 'Covid-19 Map with Case Numbers'
+          text: 'Covid-19 Map with Case Numbers',
+          style: {
+            fontWeight: 'bold',
+            fontSize: '1.6vw'
+          }
         },
         mapNavigation: {
           enabled: true,

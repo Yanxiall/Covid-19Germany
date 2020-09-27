@@ -20,7 +20,7 @@
           <div class="desc">Total Deaths</div>
         </div>
         <div>
-          <div class="deathNum">{{total.activeCases}}</div>
+          <div class="activeCases">{{total.activeCases}}</div>
           <div class="desc">Active Cases</div>
         </div>
         <div>
@@ -79,56 +79,67 @@ export default {
 .main {
   font-family: "Times New Roman", Times, serif;
   width: 80%;
-  margin: 0px auto 10px auto;
+  margin: 0vw auto 1.333vw auto;
 }
 .main .banner{
   font-size:0;
 }
 .main .totalInfo{
-  padding:20px 0px 20px 0px; 
+  padding:2.667vw 0vw 2.667vw 0vw; 
   background-color:turquoise;
-  padding-left:10px;
+  padding-left:1.333vw;
+  
+}
+.totalInfo h2{
+  font-size: 1.8vw;
 }
 .main .statistics {
   display: flex;
   justify-content: space-between;
   text-align: center;
   background-color: #f5f6f7;
-  padding: 20px 40px;
-  border-radius: 10px;
+  padding: 2.667vw 5.333vw;
+  border-radius: 1.333vw;
 }
 .main .subtitle h2{
-  padding-top:20px;
-  padding-bottom: 20px;
-  padding-left:10px;
+  padding-top:2.667vw;
+  padding-bottom: 2.667vw;
+  padding-left:1.333vw;
   background-color:turquoise;
+  font-size: 1.8vw;
+}
+.main .activeCases{
+  color:indigo;
+  font-size: 1.8vw;
+  font-weight: 1000;
 }
 .main .confirmNum {
   color: #22aeb4;
-  font-size: 20px;
+  font-size: 1.8vw;
   font-weight: 1000;
 }
 .main .recoverNum {
   color:green;
-  font-size: 20px;
+  font-size: 1.8vw;
   font-weight: 1000;
 }
 .main .deathNum {
   color:red;
-  font-size: 20px;
+  font-size: 1.8vw;
   font-weight: 1000;
 }
 .main .newdeathNum {
-  color:red;
-  font-size: 20px;
+  color:lawngreen;
+  font-size: 1.8vw;
   font-weight: 1000;
 }
 .main .newconfirmNum {
-  color:orchid;
-  font-size: 20px;
+  color:mediumblue;
+  font-size: 1.8vw;
   font-weight: 1000;
 }
 .main .desc{
   font-weight: 700;
+  font-size: 1.4vw;
 }
 </style>

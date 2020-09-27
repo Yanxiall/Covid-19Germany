@@ -11,7 +11,11 @@ export default {
     return {
       chartOptions: {
         title: {
-          text: "Daily Cases"
+          text: "Daily Cases",
+          style: {
+            fontWeight: 'bold',
+            fontSize: '1.6vw'
+          }
         },
         xAxis: {
           type: 'datetime',
@@ -77,9 +81,9 @@ export default {
 
 <style>
 .highcharts-container {
-  width: 600px;
-  height: 400px;
-  border: 1px solid #ddd;
+  width: 80vw;
+  height: 53.333vw;
+  border: 0.133vw solid #ddd;
   margin: auto;
 }
 </style>

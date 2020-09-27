@@ -3,7 +3,7 @@ name: Scheduled crawler and deployment
 on:
   push:
   schedule:
-    - cron: '0 9,13,17,22 * * *'
+    - cron: '0 7,12,17,22 * * *'
 env:
   TZ: Europe/Berlin
 

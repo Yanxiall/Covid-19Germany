@@ -40,6 +40,10 @@
          <h2>Daily Total Cases</h2>
          <dailyConfirm/>
       </div>
+       <div class="subtitle">
+         <h2>Cases per day</h2>
+         <dailyGrowth/>
+      </div>
       <div class="subtitle">
         <h2>Case Numbers by State</h2>
         <CovidTable/>
@@ -50,6 +54,7 @@
 <script>
 import Germanymap from './components/GermanyMap'
 import dailyConfirm from './components/dailyConfirm'
+import dailyGrowth from './components/dailyGrowth'
 import todaydata from './assets/today.json'
 import CovidTable from './components/CovidTable'
 export default {
@@ -57,6 +62,7 @@ export default {
   components: {
    Germanymap,
    dailyConfirm,
+   dailyGrowth,
    CovidTable
   },
   data(){

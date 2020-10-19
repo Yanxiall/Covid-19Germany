@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import daily from '../assets/daily.json'
+import growth from '../assets/growth.json'
 export default {
   data() {
     return {
       chartOptions: {
         title: {
-          text: "Daily Total Cases",
+          text: "Daily New Cases",
           style: {
             fontWeight: 'bold',
             fontSize: '1.6vw'
@@ -23,11 +23,20 @@ export default {
 				     day: '%e of %b'
 			}
       	},
-        yAxis: {
+        yAxis:[ {
+          opposite: true,
           title: {
-            text: "total coronavirus cases"
+            id:0,
+            text: "infected cases per day"
           }
         },
+        {
+          title: {
+            id:1,
+            text: "death cases per day"
+          }
+        }
+        ],
         legend: {
           layout: "vertical",
           align: "right",
@@ -38,19 +47,21 @@ export default {
             label: {
               connectorAllowed: false
             },
-            pointStart: Date.UTC(2020, 2, 12),
+            pointStart: Date.UTC(2020, 1, 25),
 			      pointInterval: 24 * 3600 * 1000 // one day
           }
         },
         series: [
           {
-            name: "confirmed",
-            data: daily["confirmed"]
+            name: "infected cases per day",
+            yAxis: 0,
+            data: growth["DayInfected"]
           },
           {
-            name: "recovered",
+            name: "dead cases per day",
+            yAxis: 1,
             color:'#49ff2f',
-            data: daily["cured"]
+            data: growth["DayDeath"]
           }
         ],
         responsive: {

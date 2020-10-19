@@ -15,6 +15,7 @@ def Scraping(url='https://www.coronazaehler.de'):
   response.encoding=response.apparent_encoding
   soup = BeautifulSoup(response.text ,'lxml')
   scrapDaily(soup)
+  scrapDailyGrowth(soup)
   scrapToday(soup)
 
 #get the daily statistik 
@@ -40,12 +41,28 @@ def scrapDaily(soup):
   cofirmedlistpro = list(map(int, cofirmedlistpro))#convert string to int
   curedlistpro = list(map(int,curedlistpro))
   curvedata = {}
-  #curvedata['date'] = datepro
   curvedata['confirmed'] = cofirmedlistpro
   curvedata['cured'] = curedlistpro
   with open('../covid19map/src/assets/daily.json', 'w') as f:#save data
     json.dump(curvedata,f)
-
+#get the daily growth statistik
+def scrapDailyGrowth(soup):   
+  script_reg = re.compile(".*?growthChart.*?")
+  jscode = soup.find('script',text = script_reg)
+  ptn = r"[\[].*?]"
+  result = re.findall(ptn,str(jscode))
+  if result:
+    deathDaylist =  result[1]
+    ConfirmedDaylist = result[2]  
+  deathDaylistpro = re.findall(r"\d+",deathDaylist)#daily new death list
+  ConfirmedDaylistpro = re.findall(r"\d+",ConfirmedDaylist)#daily new infected list
+  DeathDaygrowth = list(map(int, deathDaylistpro))#convert string to int
+  ConfirmedDaygrowth = list(map(int,ConfirmedDaylistpro))
+  GrowthData = {}
+  GrowthData['DayInfected'] = ConfirmedDaygrowth
+  GrowthData['DayDeath'] = DeathDaygrowth
+  with open('../covid19map/src/assets/growth.json', 'w') as f:#save data
+    json.dump(GrowthData,f)
 #today statistik
 def scrapToday(soup):  
   TotalResult1 = soup.find_all('h1',{"class":"card-number-big"})#Total cases in Germany

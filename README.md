@@ -15,7 +15,7 @@ The repository is used to track the covid-19 outbreak in Germany(https://yanxial
 - Statistics of infected cases in each city of each state.
 
 ### Website Overview
-![](https://www.yanxia.eu/upload/coronaWeb.gif)
+![](coronaWeb.gif)
 
 ### Technical Details
 - Web Crawler is implemented in python.

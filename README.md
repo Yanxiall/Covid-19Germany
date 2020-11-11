@@ -7,3 +7,21 @@ The repository is used to track the covid-19 outbreak in Germany(https://yanxial
 - A covid-map which shows the infected numbers in every state;
 - A table which shows the infected numbers of the cities;
 - A curve which shows the change of total daily cases in Germany.
+
+### Features
+- Presentation of coronavirus development overview in germany.
+- Visualization of case numbers of each state in different color with a covid19-map.
+- Statistics of daily cases and daily new cases.
+- Statistics of infected cases in each city of each state.
+
+### Website Overview
+![](https://www.yanxia.eu/upload/coronaWeb.gif)
+
+### Technical Details
+- Web Crawler is implemented in python.
+- Vue.js framework is used in Data visualization.
+- The plugin highcharts and element ui are used for data visualization. 
+- Continious deployment is achieved with the help of github actions and Github Pages.
+
+### Dependencies
+Vue.js, highcharts, python, element ui

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import daily from '../assets/daily.json'
+import daily from "../assets/daily.json";
 export default {
   data() {
     return {
@@ -13,70 +13,70 @@ export default {
         title: {
           text: "Daily Total Cases",
           style: {
-            fontWeight: 'bold',
-            fontSize: '1.6vw'
-          }
+            fontWeight: "bold",
+            fontSize: "1.6vw",
+          },
         },
         xAxis: {
-          type: 'datetime',
-			    dateTimeLabelFormats: {
-				     day: '%e of %b'
-			}
-      	},
+          type: "datetime",
+          dateTimeLabelFormats: {
+            day: "%e of %b",
+          },
+        },
         yAxis: {
           title: {
-            text: "total coronavirus cases"
-          }
+            text: "total coronavirus cases",
+          },
         },
         legend: {
           layout: "vertical",
           align: "right",
-          verticalAlign: "middle"
+          verticalAlign: "middle",
         },
         plotOptions: {
           series: {
             label: {
-              connectorAllowed: false
+              connectorAllowed: false,
             },
             pointStart: Date.UTC(2020, 2, 12),
-			      pointInterval: 24 * 3600 * 1000 // one day
-          }
+            pointInterval: 24 * 3600 * 1000, // one day
+          },
         },
         series: [
           {
             name: "confirmed",
-            data: daily["confirmed"]
+            data: daily["confirmed"],
           },
           {
             name: "recovered",
-            color:'#49ff2f',
-            data: daily["cured"]
-          }
+            color: "#49ff2f",
+            data: daily["cured"],
+          },
         ],
         responsive: {
           rules: [
             {
               condition: {
-                maxWidth: 500
+                maxWidth: 500,
               },
               chartOptions: {
                 legend: {
                   layout: "horizontal",
                   align: "center",
-                  verticalAlign: "bottom"
-                }
-              }
-            }
-          ]
-        }
-      }
+                  verticalAlign: "bottom",
+                },
+              },
+            },
+          ],
+        },
+      },
     };
   },
   methods: {
     myCallback() {
       console.log("this is callback function");
-    }
-  }
+    },
+  },
 };
 </script>
 
